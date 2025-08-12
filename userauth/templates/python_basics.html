@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Python Basics</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #f4f8fb;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    .container {
+      background-color: #ffffff;
+      padding: 40px;
+      margin-top: 40px;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+    h2, h4 {
+      color: #007bff;
+    }
+    ul {
+      margin-left: 20px;
+    }
+    code {
+      background-color: #f1f1f1;
+      padding: 4px 8px;
+      border-radius: 5px;
+      font-size: 90%;
+      font-family: Consolas, monospace;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2 class="mb-4">Python Basics</h2>
+
+    <p>Welcome to Python! Python is a popular high-level, interpreted programming language known for its readability and simplicity. Below are the foundational concepts every Python beginner should learn:</p>
+
+    <hr>
+
+    <h4>1. Hello World</h4>
+    <p>Your first Python program:</p>
+    <pre><code>print("Hello, World!")</code></pre>
+
+    <hr>
+
+    <h4>2. Variables and Data Types</h4>
+    <p>Variables are used to store data.</p>
+    <pre><code>name = "Alice"
+age = 25
+height = 5.6
+is_student = True</code></pre>
+    <ul>
+      <li><strong>String</strong>: Text data (e.g., <code>"Hello"</code>)</li>
+      <li><strong>Integer</strong>: Whole numbers (e.g., <code>25</code>)</li>
+      <li><strong>Float</strong>: Decimal numbers (e.g., <code>5.6</code>)</li>
+      <li><strong>Boolean</strong>: True or False values</li>
+    </ul>
+
+    <hr>
+
+    <h4>3. Conditional Statements</h4>
+    <p>Used to make decisions in code:</p>
+    <pre><code>if age > 18:
+    print("Adult")
+else:
+    print("Minor")</code></pre>
+
+    <hr>
+
+    <h4>4. Loops</h4>
+    <p>Repeat tasks using loops:</p>
+    <strong>For Loop</strong>
+    <pre><code>for i in range(5):
+    print(i)</code></pre>
+
+    <strong>While Loop</strong>
+    <pre><code>count = 0
+while count < 5:
+    print(count)
+    count += 1</code></pre>
+
+    <hr>
+
+    <h4>5. Functions</h4>
+    <p>Reusable blocks of code:</p>
+    <pre><code>def greet(name):
+    print(f"Hello, {name}!")</code></pre>
+
+    <hr>
+
+    <h4>6. Lists and Tuples</h4>
+    <p>Used to store collections:</p>
+    <pre><code>fruits = ["apple", "banana", "cherry"]
+coordinates = (10.0, 20.0)</code></pre>
+
+    <hr>
+
+    <h4>7. Dictionaries</h4>
+    <p>Key-value pairs:</p>
+    <pre><code>person = {"name": "Alice", "age": 25}</code></pre>
+
+    <hr>
+
+    <h4>8. Input from User</h4>
+    <p>Get data from the user:</p>
+    <pre><code>name = input("Enter your name: ")
+print("Hello, " + name)</code></pre>
+
+    <hr>
+
+    <h4>9. Exception Handling</h4>
+    <p>Handle errors gracefully:</p>
+    <pre><code>try:
+    x = int(input("Enter a number: "))
+except ValueError:
+    print("That's not a number!")</code></pre>
+
+    <hr>
+
+    <h4>10. Object-Oriented Programming (OOP)</h4>
+    <p>Create reusable blueprints using classes:</p>
+    <pre><code>class Student:
+    def __init__(self, name):
+        self.name = name
+
+    def greet(self):
+        print(f"Hi, I'm {self.name}")
+
+s1 = Student("Alice")
+s1.greet()</code></pre>
+
+    <hr>
+
+    <div class="text-center mt-4">
+      <a href="{% url 'learn_python' %}" class="btn btn-primary">← Back to Learning Page</a>
+    </div>
+  </div>
+</body>
+</html>

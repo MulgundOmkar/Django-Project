@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Dashboard</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    /* Light Mode Defaults */
+    body.light-mode {
+      background-color: #f4f4f4;
+      color: #111;
+    }
+
+    /* Dark Mode Defaults */
+    body.dark-mode {
+      background-color: #000;
+      color: #fff;
+    }
+
+    .navbar {
+      background-color: #212529;
+      color: white;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #444;
+    }
+
+    .navbar h2 {
+      margin: 0;
+    }
+
+    .user-info {
+      text-align: right;
+    }
+
+    .user-info strong {
+      color: #ffc107;
+    }
+
+    .user-info a {
+      display: inline-block;
+      padding: 6px 12px;
+      margin-left: 10px;
+      text-decoration: none;
+      border-radius: 4px;
+      font-size: 13px;
+      color: #fff;
+    }
+
+    .edit-btn {
+      background-color: #28a745;
+    }
+
+    .logout-btn {
+      background-color: #dc3545;
+    }
+
+    .toggle-btn {
+      background-color: #007bff;
+    }
+
+    .user-info a:hover {
+      opacity: 0.85;
+    }
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 40px;
+    }
+
+    .card {
+      background-color: #111;
+      border: 1px solid #39ff14;
+      padding: 20px;
+      text-align: center;
+      color: #39ff14;
+      border-radius: 12px;
+      transition: 0.3s;
+      box-shadow: 0 0 20px rgba(57, 255, 20, 0.2);
+      text-decoration: none;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 30px rgba(57, 255, 20, 0.5);
+    }
+
+    .card-title {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .card-content {
+      font-size: 14px;
+    }
+
+    /* Light Mode Card Adjustment */
+    body.light-mode .card {
+      background-color: #fff;
+      color: #111;
+      border: 1px solid #007bff;
+      box-shadow: 0 0 20px rgba(0, 123, 255, 0.2);
+    }
+
+    body.light-mode .card:hover {
+      box-shadow: 0 0 30px rgba(0, 123, 255, 0.4);
+    }
+  </style>
+</head>
+<body class="dark-mode">
+
+  <!-- Navbar -->
+  <div class="navbar">
+    <h2>Dashboard</h2>
+    <div class="user-info">
+      <div>Welcome, <strong>{{ user.name }}</strong></div>
+      <div>Logged in as: <strong>{{ user.email }}</strong></div>
+      <div style="margin-top: 5px;">
+        <a href="{% url 'profile_edit' %}" class="edit-btn">Edit Profile</a>
+        <a href="{% url 'logout' %}" class="logout-btn">Logout</a>
+        <a href="javascript:void(0);" class="toggle-btn" onclick="toggleMode()">Toggle Day/Night</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Grid Dashboard -->
+  <div class="grid-container">
+    <a href="{% url 'team_updates' %}" class="card">
+      <p class="card-title">TEAM UPDATES</p>
+      <div class="card-content">Latest news from the development team.</div>
+    </a>
+    <a href="{% url 'employee_handbook' %}" class="card">
+      <p class="card-title">EMPLOYEE<br>HANDBOOK</p>
+      <div class="card-content">Company policies and guidelines.</div>
+    </a>
+    <a href="{% url 'project_reports' %}" class="card">
+      <p class="card-title">PROJECT<br>REPORTS</p>
+      <div class="card-content">Track project progress and deliverables.</div>
+    </a>
+    <a href="{% url 'hiring' %}" class="card">
+      <p class="card-title">HIRING</p>
+      <div class="card-content">Open positions and referral bonuses.</div>
+    </a>
+    <a href="{% url 'annual' %}" class="card">
+      <p class="card-title">ANNUAL<br>REPORT</p>
+      <div class="card-content">Financial and performance highlights.</div>
+    </a>
+    <a href="{% url 'new_services' %}" class="card">
+      <p class="card-title">NEW<br>SERVICES</p>
+      <div class="card-content">Explore new tools and services added.</div>
+    </a>
+    <a href="{% url 'learn_python' %}" class="card">
+      <p class="card-title">LEARN<br>PYTHON</p>
+      <div class="card-content">
+        ✔ Python Basics<br>
+        ✔ Flask Framework<br>
+        ✔ Django Framework<br>
+        ✔ REST APIs<br>
+        ✔ Web Dev with Python
+      </div>
+    </a>
+  </div>
+
+  <!-- JavaScript for Toggle Mode -->
+  <script>
+    function toggleMode() {
+      document.body.classList.toggle("light-mode");
+      document.body.classList.toggle("dark-mode");
+    }
+  </script>
+
+</body>
+</html>

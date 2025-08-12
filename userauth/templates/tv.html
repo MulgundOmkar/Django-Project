@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Save Your Spot</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Outfit', sans-serif;
+      background-color: #0c0631;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    .container {
+      display: flex;
+      width: 90%;
+      max-width: 1000px;
+      background-color: #151149;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+    }
+
+    .left {
+      flex: 1;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .left video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .right {
+      flex: 1;
+      padding: 40px 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background-color: #0c0631;
+    }
+
+    .right h1 {
+      font-size: 48px;
+      line-height: 1.1;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .right p {
+      font-size: 16px;
+      line-height: 1.5;
+      margin-bottom: 30px;
+      color: #ccccff;
+    }
+
+    .btn {
+      padding: 12px 30px;
+      border: 2px solid #fff;
+      border-radius: 30px;
+      background: transparent;
+      color: white;
+      font-weight: 600;
+      cursor: pointer;
+      text-transform: uppercase;
+      transition: 0.3s ease;
+      align-self: start;
+    }
+
+    .btn:hover {
+      background: white;
+      color: #0c0631;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+      }
+
+      .right {
+        padding: 30px 20px;
+        text-align: center;
+      }
+
+      .right h1 {
+        font-size: 36px;
+      }
+
+      .btn {
+        align-self: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="left">
+      <!-- ✅ Replace with your bubble video -->
+      <video autoplay loop muted playsinline>
+        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    </div>
+    <div class="right">
+      <h1>SAVE<br>YOUR<br>SPOT</h1>
+      <p>
+        A unique event filled with networking, workshops, seminars,<br>
+        and engaging conversations with the industry's leading experts.
+      </p>
+      <button class="btn">BOOK NOW</button>
+    </div>
+  </div>
+
+</body>
+</html>
